@@ -1,0 +1,46 @@
+[
+	{
+		"name":"Structure and function of the processor",
+		"content":"A processor is made up of many parts including:<ul><li>ALU (Arithmetic Logic Unit)</li><li>CU (Control Unit)</li><li>Quartz Clock</li></ul>The <b>Arithmetic Logic Unit</b> performs all arithmetic calculations and comparisons. The <b>Control Unit</b> sends signals to different parts of the CPU to control it. The <b>Clock</b> controls the timing of the CPU and is what makes the CPU run at a certain speed."
+	},
+	{
+		"name":"Types of processor",
+		"content":"There are 2 main types of processor <a target='_blank' href='https://en.wikipedia.org/wiki/Von_Neumann_architecture'>Von-Neumann</a> and <a target='_blank' href='https://en.wikipedia.org/wiki/Harvard_architecture'>Harvard</a>, the first uses a shared memory location for instructions and data and the second uses seperate RAM for data and instructions. There are also two different types of processor in the way of <a href='https://en.wikipedia.org/wiki/Reduced_instruction_set_computer' target='_blank'>RISC</a> and <a href='https://en.wikipedia.org/wiki/Complex_instruction_set_computer' target='_blank'>CISC</a> which stand for \"Reduced Instruction Set Computer\" and \"Complex Instruction Set Computer\" respectively, this details which instructions and registers are generally available for use."
+	},
+	{
+		"name":"Systems Software",
+		"content":"Systems Software is software which is used to maintain or monitor a computer system and does not provide a use specific to the user, examples of these are:<ul><li>Anti-virus</li><li>Defraggers</li><li>Task Managers</li></ul>"
+	},
+	{
+		"name":"Applications Generation",
+		"content":"This is the process of translating code written by a programmer into code able to be executed by a machine. There are 3 tools that do this, these are:<ul><li>Assemblers</li><li>Compilers</li><li>Interpreters</li></ul><b>Assemblers</b> are used to translate assembly code (written close to machine code in mnemonics) into machine code. <b>Compilers</b> translate high level source code into machine code. <b>Interpreters</b> also translate high level code into machine code, but they do it line by line instead of as a whole."
+	},
+	{
+		"name":"Compression, Encryption and Hashing",
+		"content":"Compression is the act of making data take up less space and comes in 2 forms:<ul><li>Lossy compression causes some data to be lost, for example compressing an image with lossy compression would make it look pixelated</li><li>Lossless compression, as the name suggests, does not lose any data when it compresses so is more suitable for text or for preserving quality. It does however have the drawback of often not compressing as much as lossy would</li></ul><br />Encryption is where data is scrambled as to make in unreadable for anyone without the proper tools/permissions to be able to view the data, it is most commonly used for sensitive information online such as login details. Hashing is a way of getting data of any size to a fixed size key, this is generally used when checking passwords as it means that if the database storing them is breached the breachers still cannot access the accounts."
+	},
+	{
+		"name":"Databases",
+		"content":"A database is an organised collection of related data."
+	},
+	{
+		"name":"Networks",
+		"content":"A computer is part of a network if it is connected to another computer with the ability to share data."
+	},
+	{
+		"name":"Data Types",
+		"content":"There are many data types available, but here will be focused on the primitives that span many different programming languages.<ul><li>Character</li><li>String</li><li>Integer</li><li>Floating Point Number</li><li>Boolean</li><li>Pointer</li></ul>A <b>character</b> is just a single letter such as 'A' or '\\n' (for a newline). A <b>string</b> is basically just an array of characters with extra functionality such as a method for returning the length, an example of a string would be 'Henlo'. <b>Integers</b> are any whole numbers such as 6, 12, or -23. <b>Floating Point</b> numbers are any numbers with a decimal point such as 5.3, 9.21, -0.231. A <b>Boolean</b> can either be true or false. A <b>Pointer</b> is a reference to a memory location."
+	},
+	{
+		"name":"Data Structures",
+		"content":"Data Structures hold data types inside and give them extra functionality or some structure. Common examples of these are:<ul><li>Linked List</li><li>Binary Tree</li><li>Union</li><li>Record</li></ul>A <b>Linked List</b> is a linear list of elements where each node (the part holding the data and references) points to the next, inserting or deleting elements in this is easier than normal arrays as it does not leave gaps or need to be relocated, although randomly accessing elements is slower as it needs to be travesed from the beginning. A <b>Binary Tree</b> is a structure where each node has a left and right reference, with higher elements to the right and lower elements to the left elements are sorted when inserted. The primary advantage of binary trees is the O(log(n)) search time, it is O(log(n)) as each time an element is compared the lower left to compare is halfed (on a correctly balanced tree). A <b>Union</b> provides the ability to have many data types to be stored in the same memory space (not at the same time), the size of a union is the size of its biggest data type. There are also tagged-unions which provide a tag as to what type is currently stored in the union, this is in order for there to be type safety and help prevent exceptions. <b>Records</b> are pure data structures which hold a list of different data, and then many of these are normally accessed by indexes into them."
+	},
+	{
+		"name":"Logic Gates",
+		"content":"There are 4 types of logic gate needed to be known these are:<ul><li>AND</li><li>OR</li><li>NOT</li><li>XOR</li></ul><b>AND</b> only outputs true when both of its inputs are true. <b>OR</b> outputs true if either of its inputs are true. <b>NOT</b> ouputs true only if its sole input is false. <b>XOR</b> outputs true if either of the inputs are true, but false if both of them or neither of them are."
+	},
+	{
+		"name":"Algorithms",
+		"content":"There are several different standard algorithms which are needed to be known these are: A* Search, Dijkstra, Bubble Sort, Quicksort, Mergesort, and Insertionsort."
+	}
+]

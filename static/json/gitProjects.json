@@ -1,0 +1,30 @@
+[
+	{
+		"name":"Random Rot Ciphering","link":"https://github.com/AlexBliss24/ROTEnDe",
+		"content":"Uses a key to randomly generate a dictionary then ciphers the input with the generated dictionary."
+	},
+	{
+		"name":"Pi Generator","link":"https://github.com/AlexBliss24/Pi-Gen",
+		"content":"Generates pi based upon the ratio of co-prime vs non-co-prime numbers in a random set being equal to 6/&pi;<sup>2</sup>."
+	},
+	{
+		"name":"Random maze generator","link":"https://github.com/AlexBliss24/Maze",
+		"content":"Generates a random maze, this is the basis of my A-Level Project."
+	},
+	{
+		"name":"Prime Sieve","link":"https://github.com/AlexBliss24/Prime1",
+		"content":"Uses an implementation of the <a href='http://www.mersennewiki.org/index.php/Sieve_of_Eratosthenes' target='_blank'>Sieve of Eratosthenes</a> to generate prime numbers up to a desired value."
+	},
+	{
+		"name":"Little Man Computer","link":"https://github.com/AlexBliss24/lmc",
+		"content":"Little man computer (LMC) is a simplified version of the Von Neumann architecture often used to teach people about assembly programming."
+	},
+	{
+		"name":"Sorting Algorithms","link":"https://github.com/AlexBliss24/Sorting",
+		"content":"Just implementations of a few sorting algorithms along with a facility to measure how long each takes to sort a list of random elements."
+	},
+	{
+		"name":"Linked List","link":"https://github.com/AlexBliss24/linkedList",
+		"content":"Simply a linked list, although I have further improved this to make it generic I just have not updated it on Github yet."
+	}
+]

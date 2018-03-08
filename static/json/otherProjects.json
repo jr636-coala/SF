@@ -1,0 +1,30 @@
+[
+	{
+		"name":"Obfuscated Tetris",
+		"content":"Tetris written using SDL2 and squished down into the smallest amount of characters possible."
+	},
+	{
+		"name":"SDL Net Server and Client",
+		"content":"A simple client server application, where they ping each other and if they do not recieve a resonse they say that they have gone. It also at one point allowed for messages to be sent through with parameters indicatin whether they were commands or text, but whilst updating it I had it removed then never added it back."
+	},
+	{
+		"name":"Mandelbrot Set",
+		"content":"Generates the <a href='https://en.wikipedia.org/wiki/Mandelbrot_set' target='_blank'>Mandelbrot Set</a> for pixels on the screen then outputs them to the screen or to a file, the amount of pixels rendered (so therefore the resolution) can be changed with options, this can help speed up the rendering time since otherwise it can take a few seconds for each frame. The way in which I lowered the resolution however was just a botch as I just modulo-ed past some pixels, so even though it looked fine on the native screen any attempt to record it would result in a wierd effect."
+	},
+	{
+		"name":"Factorial Generator",
+		"content":"Generates factorials, the concept is pretty simple in itself but I just wrote this to check out the <a href='https://gmplib.org/'>GMP library</a> for using infinite precision numbers which allows for better resolution on calculations."
+	},
+	{
+		"name":"Genetic Algorithm (Reaching Defined String)",
+		"content":"Uses a genetic algorithm and starts from a random string and evaluates fitness in order to move towards the 'goal' string."
+	},
+	{
+		"name":"Dust Game",
+		"content":"Not really a game (especially as I did not carry on past simple stuff), but each pixel represents an area where a bit of dust can go. There are different types of dust which have different properties so interact with each other in different ways. <a href='http://powdertoy.co.uk/' target='_blank'>Inspired by The Powder Toy</a>"
+	},
+	{
+		"name":"Random Walker",
+		"content":"Random dots move around the screen and when they bump into the static dot in the middle of the screen they stick and then any dots that hit them as well stick, and so on."
+	}
+]
