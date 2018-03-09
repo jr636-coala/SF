@@ -55,26 +55,32 @@
 
 			app.config(function($routeProvider){
 				$routeProvider.when("/maths", {
-					templateUrl : "./static/pages/maths.html"
+					templateUrl : "./static/pages/maths.html",
+					controller  : "cMaths"
 				}).when("/computing", {
-					templateUrl : "./static/pages/computing.html"
+					templateUrl : "./static/pages/computing.html",
+					controller  : "cComputing"
 				}).when("/theory", {
 					templateUrl : "./static/pages/theory.html",
 					controller : "cTheory"
 				}).when("/alevel", {
-					templateUrl : "./static/pages/alevel.html"
+					templateUrl : "./static/pages/alevel.html",
+					controller  : "cALevel"
 				}).when("/projects", {
 					templateUrl : "./static/pages/projects.html",
 					controller : "cProjects"
 				}).when("/hobbies", {
 					templateUrl : "./static/pages/hobbies.html",
+					controller  : "cHobbies"
 				}).when("/twisty", {
 					templateUrl : "./static/pages/twisty.html",
 					controller : "cTwisty"
 				}).when("/contact", {
-					templateUrl : "./static/pages/contact.html"
+					templateUrl : "./static/pages/contact.html",
+					controller  : "cContact"
 				}).otherwise({
-					templateUrl : "./static/pages/home.html"
+					templateUrl : "./static/pages/home.html",
+					controller  : "cHome"
 				});
 			});
 		</script>
