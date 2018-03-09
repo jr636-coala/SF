@@ -1,5 +1,4 @@
 app.controller("tController", function($scope, $interval){
-	document.title = "Home";
 	$scope.tTime = new Date().toLocaleTimeString();
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
@@ -8,7 +7,7 @@ app.controller("tController", function($scope, $interval){
 
 
 
-app.controller("cTheory", function($scope, $sce){
+app.controller("cTheory", function($scope, $sce, $http){
 	document.title = "Theory";
 	$scope.theoryItems = [];
 	
@@ -19,7 +18,7 @@ app.controller("cTheory", function($scope, $sce){
 	});
 });
 
-app.controller("cProjects", function($scope, $sce){
+app.controller("cProjects", function($scope, $sce, $http){
 	document.title = "Projects";
 	$scope.gitItems = [];
 	
@@ -38,7 +37,7 @@ app.controller("cProjects", function($scope, $sce){
 	});
 });
 
-app.controller("cTwisty", function($scope, $sce){
+app.controller("cTwisty", function($scope, $sce, $http){
 	document.title = "Puzzles";
 	$scope.items = [];
 	
@@ -47,4 +46,28 @@ app.controller("cTwisty", function($scope, $sce){
 		for (var i = 0; i < $scope.items.length; i++)
 			$scope.items[i].content = $sce.trustAsHtml($scope.items[i].content);
 	});
+});
+
+app.controller("cMaths", function($scope){
+	document.title = "Maths";
+});
+
+app.controller("cComputing", function($scope){
+	document.title = "Computing";
+});
+
+app.controller("cALevel", function($scope){
+	document.title = "A-Level";
+});
+
+app.controller("cContact", function($scope){
+	document.title = "Contact";
+});
+
+app.controller("cHome", function($scope){
+	document.title = "Home";
+});
+
+app.controller("cHobbies", function($scope){
+	document.title = "Hobbies";
 });
