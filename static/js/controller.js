@@ -22,7 +22,7 @@ app.controller("cProjects", function($scope, $sce, $http){
 	document.title = "Projects";
 	$scope.gitItems = [];
 	
-	$http.get("./static/json/githubProjects.json").then(function(res){
+	$http.get("./static/json/gitProjects.json").then(function(res){
 		$scope.gitItems = res.data;
 		for (var i = 0; i < $scope.gitItems.length; i++)
 			$scope.gitItems[i].content = $sce.trustAsHtml($scope.gitItems[i].content);
