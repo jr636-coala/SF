@@ -3,6 +3,10 @@ app.controller("tController", function($scope, $interval){
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 	}, 1000);
+	
+	$scope.contentMargin = function(){
+		return document.getElementById("navigation").style.width;
+	};
 });
 
 
