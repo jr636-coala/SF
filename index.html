@@ -18,7 +18,8 @@
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
-			<div class="w3-top">
+		<div class="w3-cell-row">
+			<div class="w3-top w3-cell">
 				<div class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
 					<a href="#!home" class="w3-bar-item w3-button w3-mobile" ng-click="changeTitle('Home')">Home</a>
 					<a href="#!maths" class="w3-bar-item w3-button" ng-click="changeTitle('Maths')">Maths</a>
@@ -45,10 +46,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="w3-content" style="max-width:60%">
+			<div class="w3-content w3-cell" style="max-width:60%">
 				<ng-view>
 				</ng-view>
 			</div>
+		</div>
 		</div>
 		<script>
 			var app = angular.module("tApp", ["ngRoute"]);
