@@ -5,8 +5,8 @@ app.controller("tController", function($scope, $interval){
 	}, 1000);
 	$scope.contentWidth = function(){
 		let a = document.getElementById("navigation").offsetWidth;
-		document.getElementById("navigation").setAttribute("style","width:"+document.getElementById("navigation").offsetWidth+"px");
-		document.getElementById("navigation").style.width=document.getElementById("navigation").offsetWidth+"px";
+		document.getElementById("navCell").setAttribute("style","width:"+document.getElementById("navigation").offsetWidth+"px");
+		document.getElementById("navCell").style.width=document.getElementById("navigation").offsetWidth+"px";
 	};
 	$scope.contentWidth();
 });
