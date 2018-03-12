@@ -8,6 +8,7 @@ app.controller("tController", function($scope, $interval){
 		document.getElementById("navigation").setAttribute("style","width:"+document.getElementById("navigation").offsetWidth+"px");
 		document.getElementById("navigation").style.width=document.getElementById("navigation").offsetWidth+"px";
 	};
+	$scope.contentWidth();
 });
 
 
