@@ -3,12 +3,6 @@ app.controller("tController", function($scope, $interval){
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 	}, 1000);
-	$scope.contentWidth = function(){
-		let a = document.getElementById("navigation").offsetWidth;
-		document.getElementById("navCell").setAttribute("style","width:"+document.getElementById("navigation").offsetWidth+"px");
-		document.getElementById("navCell").style.width=document.getElementById("navigation").offsetWidth+"px";
-	};
-	$scope.contentWidth();
 });
 
 
