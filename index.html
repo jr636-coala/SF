@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
-			<div id="navigation" class="w3-container">
+			<div id="navigation">
 				<div class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
 					<a href="#!home" class="w3-bar-item w3-button w3-mobile">Home</a>
 					<a href="#!maths" class="w3-bar-item w3-button">Maths</a>
@@ -42,10 +42,11 @@
 					<a class="w3-bar-item w3-button w3-mobile fa fa-blind" onclick="document.write('');"></a>
 					<div style="position:absolute; top:90%;" class="w3-panel">
 						{{tTime}}
+						{{contentMargin}}
 					</div>
 				</div>
 			</div>
-			<div class="w3-content w3-container">
+			<div class="w3-content" style="margin-left:">
 				<ng-view>
 				</ng-view>
 			</div>
