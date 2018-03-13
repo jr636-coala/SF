@@ -1,2 +1,3 @@
 #navigation{position: fixed;}
-.compactList li{text-decoration:none;padding:5px;}
+.compactList{list-style-type:none;}
+.compactList li{padding:5px;margin:0;}
