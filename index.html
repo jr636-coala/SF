@@ -19,34 +19,32 @@
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
-			<div id="navigation">
-				<div class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
-					<a href="#!home" class="w3-bar-item w3-button w3-mobile">Home</a>
-					<a href="#!maths" class="w3-bar-item w3-button">Maths</a>
-					<div class="w3-dropdown-hover">
-						<a href="#!computing"><button class="w3-button">Computing</button></a>
-						<div class="w3-dropdown-content w3-bar-block w3-card-4">
-							<a href="#!theory" class="w3-bar-item w3-button w3-light-grey">Theory</a>
-							<a href="#!alevel" class="w3-bar-item w3-button w3-light-grey">A Level Project</a>
-							<a href="#!projects" class="w3-bar-item w3-button w3-light-grey">Other Projects</a>
-						</div>
-					</div>
-					<div class="w3-dropdown-hover">
-						<a href="#!hobbies" ng-click="changeTitle('Hobbies')"><button class="w3-button">Hobbies</button></a>
-						<div class="w3-dropdown-content w3-bar-block w3-card-4">
-							<a href="#!twisty" class="w3-bar-item w3-button w3-light-grey">Twisty Puzzles</a>
-						</div>
-					</div>
-					<a href="#!contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
-					<a href="./links/victor.html" class="w3-bar-item w3-button w3-mobile">MMMMMMMMMM TASTES</a>
-					<a class="w3-bar-item w3-button w3-mobile fa fa-blind" onclick="document.write('');"></a>
-					<div style="position:absolute; top:90%;" class="w3-panel">
-						{{tTime}}
-						{{contentMargin}}
+			<div id="navigation" class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
+				<a href="#!home" class="w3-bar-item w3-button w3-mobile">Home</a>
+				<a href="#!maths" class="w3-bar-item w3-button">Maths</a>
+				<div class="w3-dropdown-hover">
+					<a href="#!computing"><button class="w3-button">Computing</button></a>
+					<div class="w3-dropdown-content w3-bar-block w3-card-4">
+						<a href="#!theory" class="w3-bar-item w3-button w3-light-grey">Theory</a>
+						<a href="#!alevel" class="w3-bar-item w3-button w3-light-grey">A Level Project</a>
+						<a href="#!projects" class="w3-bar-item w3-button w3-light-grey">Other Projects</a>
 					</div>
 				</div>
+				<div class="w3-dropdown-hover">
+					<a href="#!hobbies" ng-click="changeTitle('Hobbies')"><button class="w3-button">Hobbies</button></a>
+					<div class="w3-dropdown-content w3-bar-block w3-card-4">
+						<a href="#!twisty" class="w3-bar-item w3-button w3-light-grey">Twisty Puzzles</a>
+					</div>
+				</div>
+				<a href="#!contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
+				<a href="./links/victor.html" class="w3-bar-item w3-button w3-mobile">MMMMMMMMMM TASTES</a>
+				<a class="w3-bar-item w3-button w3-mobile fa fa-blind" onclick="document.write('');"></a>
+				<div style="position:absolute; top:90%;" class="w3-panel">
+					{{tTime}}
+					{{contentMargin}}
+				</div>
 			</div>
-			<div class="w3-content" style="margin-left:">
+			<div class="w3-content" style="margin-left:{{contentMargin}}px">
 				<ng-view>
 				</ng-view>
 			</div>
