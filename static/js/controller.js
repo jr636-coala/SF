@@ -44,13 +44,13 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	//
 	
 	
-	$scope.load-modalRandomItems = function(){
+	$scope.MODALloadRandomItems = function(){
 		$http.get("./static/json/modal-randomItems.json").then(function(res){
-			$scope.modal-randomItems = res.data;
+			$scope.MODALrandomItems = res.data;
 		for (let i = 0; i < $scope.modal-randomItems.length; i++)
-			$scope.modal-randomItems[i].content = $sce.trustAsHtml($scope.modal-randomItems[i].content);
+			$scope.MODALrandomItems[i].content = $sce.trustAsHtml($scope.MODALrandomItems[i].content);
 		});
-		$scope.modal-randomButton = true;
+		$scope.MODALrandomButton = true;
 	};
 });
 
