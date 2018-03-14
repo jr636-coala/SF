@@ -47,7 +47,7 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.MODALloadRandomItems = function(){
 		$http.get("./static/json/modal-randomItems.json").then(function(res){
 			$scope.MODALrandomItems = res.data;
-		for (let i = 0; i < $scope.modal-randomItems.length; i++)
+		for (let i = 0; i < $scope.MODALrandomItems.length; i++)
 			$scope.MODALrandomItems[i].content = $sce.trustAsHtml($scope.MODALrandomItems[i].content);
 		});
 		$scope.MODALrandomButton = true;
