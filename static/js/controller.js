@@ -33,6 +33,7 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.closeModal = function(){
 		document.getElementById('modal').style.display='none';
 		$scope.modalContent = $scope.modals["bodge"];
+		document.getElementById('modal').innerHTML = "";
 	};
 	// Load Modals
 	$scope.modals = {};
