@@ -43,6 +43,15 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.loadModal("./static/pages/modal/bodge.html", "bodge");
 	//
 	
+	
+	$scope.load-modalRandomItems = function(){
+		$http.get("./static/json/modal-randomItems.json").then({
+			$scope.modal-randomItems = res.data;
+		for (let i = 0; i < $scope.modal-randomItems.length; i++)
+			$scope.modal-randomItems[i].content = $sce.trustAsHtml($scope.modal-randomItems[i].content);
+		});
+		$scope.modal-randomButton = true;
+	};
 });
 
 
