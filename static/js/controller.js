@@ -3,7 +3,7 @@ app.controller("tController", function($scope, $interval){
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 			console.log($scope.markov.g($scope.nOrder,$scope.nText));
-			$scope.nNew = markov.k(markov.g(nText,nOrder),nText.substring(0,nOrder),nOrder,nLength);
+			$scope.nNew = $scope.markov.k($scope.markov.g($scope.nText,$scope.nOrder),$scope.nText.substring(0,$scope.nOrder),$scope.nOrder,nLength);
 			if ($scope.nOrder!=$scope.nOld[0]||$scope.nLength!=$scope.nOld[1]||$scope.nText!=$scope.nOld[2])
 				$scope.nMarkov = $scope.nNew;
 			$scope.nOld = [$scope.nOrder,$scope.nLength,$scope.nText];
