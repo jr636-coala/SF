@@ -1,7 +1,7 @@
 [
 	{
 		"name":"Test",
-		"content":"<span class='w3-button' ng-click='signedIn=true'>Chef</span>"
+		"content":"<button class='w3-button' ng-click='signedIn=true'>Chef</button>"
 	},
 	{
 		"name":"",
