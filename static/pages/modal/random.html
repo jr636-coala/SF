@@ -6,11 +6,11 @@
 		<h1>
 			Random Code Stuff
 		</h1>
-		<span class="w3-button" ng-click="load-modalRandomItems()"></span>
+		<span class="w3-button" ng-click="MODALloadRandomItems()"></span>
 		
-		<div class="w3-panel" ng-show="modal-randomButton">
+		<div class="w3-panel" ng-show="MODALrandomButton">
 			<ul class="w3-ul">
-				<div ng-repeat="x in modal-randomItems" ng-init="x.displayContent">
+				<div ng-repeat="x in MODALrandomItems" ng-init="x.displayContent">
 					<li><button class="w3-button w3-grey w3-hover-dark-grey w3-round-xxlarge" ng-click="x.displayContent = !x.displayContent">{{x.name}}</button></li>
 				<div class="w3-panel w3-border" ng-show="x.displayContent" compileHtml="x.content">
 				</div>
