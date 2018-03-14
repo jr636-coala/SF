@@ -2,6 +2,7 @@ app.controller("tController", function($scope, $interval){
 	$scope.tTime = new Date().toLocaleTimeString();
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
+			console.log($scope.markov.g($scope.nOrder,$scope.nText));
 	}, 1000);
 	$scope.nLength = 1000;
 	$scope.nText = "";
