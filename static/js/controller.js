@@ -21,11 +21,6 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	};
 	//
 	
-	// Load Modals
-	$scope.modals = {};
-	$scope.loadModal("./static/pages/modal/login.html", "login");
-	$scope.loadModal("./static/pages/modal/markov.html", "markov");
-	//
 	$scope.loadModal = function(path,name){
 		$http.get(path).then(function(res){
 			$scope.modals[name] = $sce.trustAsHtml(res.data);
@@ -35,6 +30,12 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 		$scope.modalContent = $scope.modals[modal];
 		document.getElementById('modal').style.display='block';
 	};
+	// Load Modals
+	$scope.modals = {};
+	$scope.loadModal("./static/pages/modal/login.html", "login");
+	$scope.loadModal("./static/pages/modal/markov.html", "markov");
+	//
+	
 });
 
 
