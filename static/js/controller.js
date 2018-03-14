@@ -27,6 +27,7 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 		});
 	};
 	$scope.showModal = function(modal){
+		document.getElementById('modal').innerHTML = "";
 		$scope.modalContent = $scope.modals[modal];
 		document.getElementById('modal').style.display='block';
 	};
