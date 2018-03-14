@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
-		</script>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js">
-		</script>
-		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
-		<link rel="stylesheet" href="./static/css/style.css" />
-		<style>
-			html, body, h1, h2, h3, h4, h5, h6 {font-family: 'Roboto', sans-serif;}
-		</style>
-		<title>
-			Home
-		</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+		<link rel="stylesheet"href="https://www.w3schools.com/w3css/4/w3.css"/><link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto"rel="stylesheet"/>
+		<link rel="stylesheet"href="./static/css/style.css"/>
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
 			<div id="navigation" class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
-				<a href="#!home" class="w3-bar-item w3-button w3-mobile">Home</a>
+				<a href="#!home" class="w3-bar-item w3-button">Home</a>
 				<a href="#!maths" class="w3-bar-item w3-button">Maths</a>
 				<div class="w3-dropdown-hover">
 					<a href="#!computing"><button class="w3-button">Computing</button></a>
@@ -27,39 +16,23 @@
 						<a href="#!theory" class="w3-bar-item w3-button w3-light-grey">Theory</a>
 						<a href="#!alevel" class="w3-bar-item w3-button w3-light-grey">A Level Project</a>
 						<a href="#!projects" class="w3-bar-item w3-button w3-light-grey">Other Projects</a>
-						<span class="w3-bar-item w3-button w3-mobile w3-light-grey" ng-click="showModal('random')">Random Code Stuff</span>
+						<span class="w3-bar-item w3-button w3-light-grey" ng-click="showModal('random')">Random Code Stuff</span>
 					</div>
 				</div>
 				<div class="w3-dropdown-hover">
-					<a href="#!hobbies" ng-click="changeTitle('Hobbies')"><button class="w3-button">Hobbies</button></a>
+					<a href="#!hobbies"><button class="w3-button">Hobbies</button></a>
 					<div class="w3-dropdown-content w3-bar-block w3-card-4">
 						<a href="#!twisty" class="w3-bar-item w3-button w3-light-grey">Twisty Puzzles</a>
 					</div>
 				</div>
-				<a href="#!contact" class="w3-bar-item w3-button w3-mobile">Contact</a>
-				<a href="./links/victor.html" class="w3-bar-item w3-button w3-mobile">MMMMMMMMMM TASTES</a>
-				<div class="w3-container w3-cell">
-					<span class="w3-circle w3-jumbo w3-button fa fa-user w3-{{signedIn?'green':'red'}}" ng-click="showModal('login')">
-					</span>
-				</div>
-				<div class="w3-container w3-cell">
-					<span class="w3-bar-item w3-button w3-mobile fa fa-blind" onclick="document.write('');">
-					</span>
-					<span class="w3-bar-item w3-button w3-mobile fa fa-link" ng-click="showModal('markov')">
-					</span>
-				</div>
-				<div style="position:absolute; top:90%;" class="w3-panel">
-					{{tTime}}
-					{{contentMargin}}
-				</div>
+				<a href="#!contact" class="w3-bar-item w3-button">Contact</a>
+				<a href="./links/victor.html" class="w3-bar-item w3-button">MMMMMMMMMM TASTES</a>
+				<!--Login--><div class="w3-container w3-cell"><span class="w3-circle w3-jumbo w3-button fa fa-user w3-{{signedIn?'green':'red'}}"ng-click="showModal('login')"></span></div>
+				<!--BlindMarkov--><div class="w3-container w3-cell"><span class="w3-bar-item w3-button fa fa-blind"onclick="document.write('');"></span><span class="w3-bar-item w3-button fa fa-link"ng-click="showModal('markov')"></span></div>
+				<!--Time--><div style="position:absolute; top:90%;"ng-bind="tTime"class="w3-panel"></div>
 			</div>
-			<div class="w3-content" style="margin-left:{{contentMargin+10}}px;margin-right:10px;max-width:100%;">
-				<ng-view>
-				</ng-view>
-			</div>
-			<!-- Modal -->
-			<div id="modal" class="w3-modal" compile-html="modalContent">
-			</div>
+			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:10px;max-width:100%;"><ng-view></ng-view></div>
+			<!--Modal--><div id="modal" class="w3-modal" compile-html="modalContent"></div>
 		</div>
 		<script>
 			var app = angular.module("tApp", ["ngRoute"]);
@@ -95,7 +68,6 @@
 				});
 			});
 		</script>
-		<script src="./static/js/controller.js">
-		</script>
+		<script src="./static/js/controller.js"></script>
         </body>
 </html>
