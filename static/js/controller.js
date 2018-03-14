@@ -28,12 +28,12 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	};
 	$scope.showModal = function(modal){
 		$scope.modalContent = $scope.modals[modal];
+		document.getElementById('modal').innerHTML = "";
 		document.getElementById('modal').style.display='block';
 	};
 	$scope.closeModal = function(){
 		document.getElementById('modal').style.display='none';
 		$scope.modalContent = $scope.modals["bodge"];
-		document.getElementById('modal').innerHTML = "";
 	};
 	// Load Modals
 	$scope.modals = {};
