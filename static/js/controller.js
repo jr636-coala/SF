@@ -1,4 +1,4 @@
-app.controller("tController", function($scope, $interval){
+app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.tTime = new Date().toLocaleTimeString();
 	$scope.nOld = [0,0,""];
 	$interval(function(){
@@ -18,6 +18,15 @@ app.controller("tController", function($scope, $interval){
 	$scope.markov = {
 		g:function(t,o){let g={};for(let i=0;i<t.length-o;i++){let x=t.substring(i,i+o);if(!(x in g)){g[x]=[]}g[x].push(t.charAt(i+o))}return g;},
 		k:function(n,i,o,s){let w=i;for(let i=0;i<s-o;i++){let p=n[w.substring(i,i+o)];if(!p){break;}w+=p[Math.floor(Math.random()*p.length)]}return w;}
+	};
+	
+	$scope.modals = {};
+	$http.get("./static/res/text/loginModal.txt").then(function(res){
+		$scope.modals["login"] = $sce.trustAsHtml(res.data);
+	});
+	
+	$scope.showModal = function(modal){
+		$scope.modalContent = $scope.modals[modal];
 	};
 });
 
