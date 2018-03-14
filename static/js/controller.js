@@ -104,3 +104,23 @@ app.controller("cHome", function($scope){
 app.controller("cHobbies", function($scope){
 	document.title = "Hobbies";
 });
+
+// Stolen from - https://odetocode.com/blogs/scott/archive/2014/09/10/a-journey-with-trusted-html-in-angularjs.aspx
+app.directive("compileHtml", function($parse, $sce, $compile) {
+    return {
+        restrict: "A",
+        link: function (scope, element, attributes) {
+ 
+            var expression = $sce.parseAsHtml(attributes.compileHtml);
+ 
+            var getResult = function () {
+                return expression(scope);
+            };
+ 
+            scope.$watch(getResult, function (newValue) {
+                var linker = $compile(newValue);
+                element.append(linker(scope));
+            });
+        }
+    }
+});
