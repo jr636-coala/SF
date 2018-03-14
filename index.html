@@ -126,7 +126,7 @@
 									Input Text
 								</label>
 								<textarea cols="100" rows="7" ng-model="nText"></textarea>
-								<textarea cols="100" rows="7">{{markov.k(markov.g(nText,nOrder),nText.substring(0,nOrder),nOrder,nLength)}}</textarea>
+								<textarea cols="100" rows="7" ng-bind="nMarkov"></textarea>
 								</li>
 							</ul>
 						</form>
