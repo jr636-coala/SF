@@ -1,9 +1,9 @@
 app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.tTime = new Date().toLocaleTimeString();
+	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.nOld = [0,0,""];
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
-			console.log($scope.markov.g($scope.nOrder,$scope.nText));
 			let rand = Math.floor(Math.random()*($scope.nText.length-$scope.nOrder));
 			if ($scope.nOrder!=$scope.nOld[0]||$scope.nLength!=$scope.nOld[1]||$scope.nText!=$scope.nOld[2])
 			{	
@@ -12,21 +12,28 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 			}
 			$scope.nOld = [$scope.nOrder,$scope.nLength,$scope.nText];
 	}, 1000);
+	// Markov Stuff
 	$scope.nLength = 1000;
 	$scope.nText = "";
-	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.markov = {
 		g:function(t,o){let g={};for(let i=0;i<t.length-o;i++){let x=t.substring(i,i+o);if(!(x in g)){g[x]=[]}g[x].push(t.charAt(i+o))}return g;},
 		k:function(n,i,o,s){let w=i;for(let i=0;i<s-o;i++){let p=n[w.substring(i,i+o)];if(!p){break;}w+=p[Math.floor(Math.random()*p.length)]}return w;}
 	};
+	//
 	
+	// Load Modals
 	$scope.modals = {};
-	$http.get("./static/res/text/loginModal.txt").then(function(res){
-		$scope.modals["login"] = $sce.trustAsHtml(res.data);
-	});
-	
+	$scope.loadModal("./static/pages/modal/login.html", "login");
+	$scope.loadModal("./static/pages/modal/markov.html", "markov");
+	//
+	$scope.loadModal = function(path,name){
+		$http.get(path).then(function(res){
+			$scope.modals[name] = $sce.trustAsHtml(res.data);
+		});
+	};
 	$scope.showModal = function(modal){
 		$scope.modalContent = $scope.modals[modal];
+		document.getElementById('modal').style.display='block';
 	};
 });
 
