@@ -1,5 +1,6 @@
 app.controller("tController", function($scope, $interval){
 	$scope.tTime = new Date().toLocaleTimeString();
+	$scope.nOld = [0,0,""];
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 			console.log($scope.markov.g($scope.nOrder,$scope.nText));
