@@ -29,13 +29,17 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.showModal = function(modal){
 		$scope.modalContent = $scope.modals[modal];
 		document.getElementById('modal').style.display='block';
-		console.log($scope.modalContent);
+	};
+	$scope.closeModal = function(){
+		document.getElementById('modal').style.display='none';
+		$scope.modalContent = $scope.modals["bodge"];
 	};
 	// Load Modals
 	$scope.modals = {};
 	$scope.loadModal("./static/pages/modal/login.html", "login");
 	$scope.loadModal("./static/pages/modal/markov.html", "markov");
 	$scope.loadModal("./static/pages/modal/random.html", "random");
+	$scope.loadModal("./static/pages/modal/bodge.html", "bodge");
 	//
 	
 });
