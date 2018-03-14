@@ -3,11 +3,9 @@ app.controller("tController", function($scope, $interval){
 	$scope.nOld = [0,0,""];
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
-			console.log($scope.markov.g($scope.nOrder,$scope.nText));
 			let rand = Math.floor(Math.random()*($scope.nText.length-$scope.nOrder));
-			let nNew = $scope.markov.k($scope.markov.g($scope.nText,$scope.nOrder),$scope.nText.substring(rand,rand+$scope.nOrder),$scope.nOrder,$scope.nLength);
 			if ($scope.nOrder!=$scope.nOld[0]||$scope.nLength!=$scope.nOld[1]||$scope.nText!=$scope.nOld[2])
-				$scope.nMarkov = nNew.substring(nNew.indexOf('.')+1);
+				$scope.nMarkov = $scope.markov.k($scope.markov.g($scope.nText,$scope.nOrder),$scope.nText.substring(rand,rand+$scope.nOrder),$scope.nOrder,$scope.nLength).substring(nNew.indexOf('.')+1);
 			$scope.nOld = [$scope.nOrder,$scope.nLength,$scope.nText];
 	}, 1000);
 	$scope.nLength = 1000;
