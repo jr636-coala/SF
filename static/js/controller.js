@@ -34,6 +34,7 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.modals = {};
 	$scope.loadModal("./static/pages/modal/login.html", "login");
 	$scope.loadModal("./static/pages/modal/markov.html", "markov");
+	$scope.loadModal("./static/pages/modal/random.html", "random");
 	//
 	
 });
