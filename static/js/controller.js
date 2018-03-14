@@ -6,7 +6,7 @@ app.controller("tController", function($scope, $interval){
 	$scope.nLength = 1000;
 	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.markov = {
-		g:function(t,o){let grams={};for(let i=0;i<text.length-o;i++){let gram=text.substring(i,i+order);if(!(gram in grams)){grams[gram]=[]}grams[gram].push(text.charAt(i+order))}return grams;},
+		g:function(t,o){let grams={};for(let i=0;i<t.length-o;i++){let gram=t.substring(i,i+order);if(!(gram in grams)){grams[gram]=[]}grams[gram].push(t.charAt(i+order))}return grams;},
 		k:function(n,i,o,s){let w=i;for(let i=0;i<s-o;i++){let p=n[w.substring(i,i+o)];if(!p){break;}w+=p[Math.floor(Math.random()*p.length)]}return w;}
 	};
 });
