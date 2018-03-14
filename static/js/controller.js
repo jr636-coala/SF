@@ -4,6 +4,7 @@ app.controller("tController", function($scope, $interval){
 			$scope.tTime = new Date().toLocaleTimeString();
 	}, 1000);
 	$scope.nLength = 1000;
+	$scope.nText = "";
 	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.markov = {
 		g:function(t,o){let grams={};for(let i=0;i<t.length-o;i++){let gram=t.substring(i,i+order);if(!(gram in grams)){grams[gram]=[]}grams[gram].push(t.charAt(i+order))}return grams;},
