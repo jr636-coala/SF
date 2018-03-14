@@ -3,12 +3,16 @@ app.controller("tController", function($scope, $interval){
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 			console.log($scope.markov.g($scope.nOrder,$scope.nText));
+			$scope.nNew = markov.k(markov.g(nText,nOrder),nText.substring(0,nOrder),nOrder,nLength);
+			if ($scope.nOrder!=$scope.nOld[0]||$scope.nLength!=$scope.nOld[1]||$scope.nText!=$scope.nOld[2])
+				$scope.nMarkov = $scope.nNew;
+			$scope.nOld = [$scope.nOrder,$scope.nLength,$scope.nText];
 	}, 1000);
 	$scope.nLength = 1000;
 	$scope.nText = "";
 	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.markov = {
-		g:function(t,o){let grams={};for(let i=0;i<t.length-o;i++){let gram=t.substring(i,i+o);if(!(gram in grams)){grams[gram]=[]}grams[gram].push(t.charAt(i+o))}return grams;},
+		g:function(t,o){let g={};for(let i=0;i<t.length-o;i++){let x=t.substring(i,i+o);if(!(x in g)){g[x]=[]}g[x].push(t.charAt(i+o))}return g;},
 		k:function(n,i,o,s){let w=i;for(let i=0;i<s-o;i++){let p=n[w.substring(i,i+o)];if(!p){break;}w+=p[Math.floor(Math.random()*p.length)]}return w;}
 	};
 });
