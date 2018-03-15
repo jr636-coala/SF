@@ -1,0 +1,12 @@
+body{background-image: url(../res/img/victor.jpg)}
+.bruh{background-color: white; padding: 0; margin: 0;}
+.images{height: 400px; width: 100%; position:absolute; top: 40%;}
+a.wakemeup:hover  , a.wakemeup:active , a.wakemeup:link , a.wakemeup:visited{text-decoration: none; color: black; cursor: text;}
+.respond{position: absolute; margin-top: 50%; background-color: white;}
+#pepe{width: 400px; height: 400px; position: absolute; left: 5%;}
+#sonic{width: 400px; height: 400px; position:absolute; left: 70%}
+#omg{height: 150px; width: 150px; position: absolute; left: 45%;}
+#video{position: absolute; left: 40%; top: 25%;}
+#showSource{color: white;}
+#video a:visited, #video a:link, #video a:active{color: white; text-decoration: none;}
+#video a:hover{color: green;}
