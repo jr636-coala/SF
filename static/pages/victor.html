@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Victors Crummy Site
+		</title>
+		<base href="../../" />
+		<link rel="stylesheet" href="./static/css/victor.css" />
+		<link rel="icon" href="./static/res/img/icon.jpg" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js">
+		</script>
+                <style>
+                        html, body, h1, h2, h3, h4, h5, h6 {font-family: "Comic Sans MS", cursive, sans-serif;}
+                </style>
+	</head>
+	<body>
+		<div ng-app="tApp" ng-controller="tController">
+			<audio autoplay src="./static/res/audio/meme.mp3" no-controls loop>
+			</audio>
+			<h1 class="bruh">
+				<a class='wakemeup' href='./static/res/video/wakemeup.mp4'>U</a> say <a class='wakemeup' href='wakemeup.mp4'>shit</a> about meh site u get rekt <a class='wakemeup' href='wakemeup.mp4'>m9</a>
+			</h1>
+			<a href="./static/pages/semiiz.html">
+				<img src="./static/res/img/omg.jpg" id="omg" />
+			</a>
+			<div class="images">
+				<img src="./static/res/img/pepe.jpg" id="pepe" />
+				<img src="./static/res/img/sonic.jpg" id="sonic" />
+				<div id="video">
+					<video width="320" height="180" autoplay onended="nextVid()" src="{{videoSource[selected]}}" onended="angular.element(this).scope().nextVideo()">
+					</video>
+					<center>
+						<p>
+							"This video was originally from <br /> <a href='https://{{videoURL[selected]}}' target='_blank'>{{videoURL[selected]}}</a>
+						</p>
+					</center>
+				</div>
+			</div>
+			<button ng-click="nextVideo()">
+			</button>
+			<div class='respond'>
+				<p>What do you think of the site? Leave a comment below.</p>
+				<form method='POST' action='victormail.html'>
+					<label for='email'>E-mail</label>
+					<input type='textbox' name='email' />
+					<label for='response'>Comments</label>
+					<textarea name='response' rows='5' cols='50'></textarea>
+					<input type='submit' value='Submit' />
+				</form>
+			</div>
+		</div>
+	</body>
+	<script>
+		var app = angular.module("tApp", []);
+
+		app.controller("tController", function($scope){
+			$scope.selected = 0;
+			$scope.videoSource = [
+			"./static/res/video/dirtonme.mp4",
+			"./static/res/video/titenic.mp4",
+			"./static/res/video/justdoit.mp4"];
+			$scope.videoURL = [
+			"www.youtube.com/watch?v=ck5f9LzQmjY",
+			"www.youtube.com/watch?v=flL5b1NaSPE",
+			"www.youtube.com/watch?v=UhRXn2NRiWI"];
+
+			$scope.nextVideo = function(){
+				$scope.selected++;
+				$scope.selected %= $scope.videoSource.length;
+			};
+
+		});
+
+	</script>
+</html>
