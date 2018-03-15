@@ -120,6 +120,10 @@ app.controller("cHobbies", function($scope){
 	document.title = "Hobbies";
 });
 
+app.controller("cTodo", function($scope){
+	document.title = "To Do";
+});
+
 // Stolen from - https://odetocode.com/blogs/scott/archive/2014/09/10/a-journey-with-trusted-html-in-angularjs.aspx
 app.directive("compileHtml", function($parse, $sce, $compile) {
     return {
