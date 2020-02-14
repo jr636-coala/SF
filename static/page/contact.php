@@ -27,7 +27,7 @@
 				</a>
 			</li>	
 			<li>
-				<a href="https://github.com/AlexBliss24" target="_blank" class="fa fa-github w3-button w3-jumbo">
+				<a href="https://github.com/jr636-coala" target="_blank" class="fa fa-github w3-button w3-jumbo">
 				</a>
 			</li>
 		</ul>

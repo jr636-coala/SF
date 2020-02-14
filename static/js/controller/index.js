@@ -2,6 +2,7 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.tTime = new Date().toLocaleTimeString();
 	$scope.contentMargin = document.getElementById("navigation").offsetWidth;
 	$scope.nOld = [0,0,""];
+	$scope.sidebar = false;
 	$interval(function(){
 			$scope.tTime = new Date().toLocaleTimeString();
 			let rand = Math.floor(Math.random()*($scope.nText.length-$scope.nOrder));
@@ -37,91 +38,29 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	};
 	// Load Modals
 	$scope.modals = {};
-	$scope.loadModal("./static/pages/modal/login.html", "login");
-	$scope.loadModal("./static/pages/modal/markov.html", "markov");
-	$scope.loadModal("./static/pages/modal/random.html", "random");
-	$scope.loadModal("./static/pages/modal/bodge.html", "bodge");
+	$scope.loadModal("static/page/modal/login.html", "login");
+	$scope.loadModal("static/page/modal/markov.html", "markov");
+	$scope.loadModal("static/page/modal/random.html", "random");
+	$scope.loadModal("static/page/modal/bodge.html", "bodge");
 	//
 	
 	
 	$scope.MODALloadRandomItems = function(){
-		$http.get("./static/json/modal-randomItems.json").then(function(res){
+		$http.get("static/json/modal-randomItems.json").then(function(res){
 			$scope.MODALrandomItems = res.data;
 		for (let i = 0; i < $scope.MODALrandomItems.length; i++)
 			$scope.MODALrandomItems[i].content = $sce.trustAsHtml($scope.MODALrandomItems[i].content);
 		});
 		$scope.MODALrandomButton = true;
 	};
-});
 
+	$scope.openSidebar = function(){
+		$scope.sidebar = true;
+	};
 
-app.controller("cTheory", function($scope, $sce, $http){
-	document.title = "Theory";
-	$scope.theoryItems = [];
-	
-	$http.get("./static/json/theory.json").then(function(res){
-		$scope.theoryItems = res.data;
-		for (let i = 0; i < $scope.theoryItems.length; i++)
-			$scope.theoryItems[i].content = $sce.trustAsHtml($scope.theoryItems[i].content);
-	});
-});
-
-app.controller("cProjects", function($scope, $sce, $http){
-	document.title = "Projects";
-	$scope.gitItems = [];
-	
-	$http.get("./static/json/gitProjects.json").then(function(res){
-		$scope.gitItems = res.data;
-		for (let i = 0; i < $scope.gitItems.length; i++)
-			$scope.gitItems[i].content = $sce.trustAsHtml($scope.gitItems[i].content);
-	});
-
-	$scope.otherItems = [];
-	
-	$http.get("./static/json/otherProjects.json").then(function(res){
-		$scope.otherItems = res.data;
-		for (let i = 0; i < $scope.otherItems.length; i++)
-			$scope.otherItems[i].content = $sce.trustAsHtml($scope.otherItems[i].content);
-	});
-});
-
-app.controller("cTwisty", function($scope, $sce, $http){
-	document.title = "Puzzles";
-	$scope.items = [];
-	
-	$http.get("./static/json/puzzles.json").then(function(res){
-		$scope.items = res.data;
-		for (let i = 0; i < $scope.items.length; i++)
-			$scope.items[i].content = $sce.trustAsHtml($scope.items[i].content);
-	});
-});
-
-app.controller("cMaths", function($scope){
-	document.title = "Maths";
-});
-
-app.controller("cComputing", function($scope){
-	document.title = "Computing";
-});
-
-app.controller("cALevel", function($scope){
-	document.title = "A-Level";
-});
-
-app.controller("cContact", function($scope){
-	document.title = "Contact";
-});
-
-app.controller("cHome", function($scope){
-	document.title = "Home";
-});
-
-app.controller("cHobbies", function($scope){
-	document.title = "Hobbies";
-});
-
-app.controller("cTodo", function($scope){
-	document.title = "To Do";
+	$scope.closeSidebar = function(){
+		$scope.sidebar = false;
+	};
 });
 
 // Stolen from - https://odetocode.com/blogs/scott/archive/2014/09/10/a-journey-with-trusted-html-in-angularjs.aspx

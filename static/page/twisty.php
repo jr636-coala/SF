@@ -5,12 +5,6 @@
 </div>
 <div class="w3-panel w3-card-4">
 	Twisty puzzles are any puzzles in which the permutation or orientation of the pieces it is composed of can be altered by turning part of the puzzle. The most well known of these puzzles is the Rubik's Cube which was released in 1980 and since then has sold over 400 million copies making it one of the best selling toys.
-	<div class="w3-display-container" style="width:40%;">
-		<img src="https://www.rubiks.com/images/products/123/rub_-_7-2__enlarged__enlarged.jpg" class="w3-round w3-image" />
-		<i class="w3-opacity w3-display-bottomleft w3-small">
-			The Rubik's Cube
-		</i>
-	</div>
 	<div class="w3-xlarge">
 		My Collection
 	</div>

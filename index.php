@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 	<head>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
-		<link rel="stylesheet"href="https://www.w3schools.com/w3css/4/w3.css"/><link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto"rel="stylesheet"/>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+		<link rel="stylesheet"href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+		<link href="https://fonts.googleapis.com/css?family=Roboto"rel="stylesheet"/>
 		<link rel="stylesheet"href="./static/css/style.css"/>
+		<link rel="shortcut icon" type="image/png" href="static/res/img/icon.jpg"/>
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
-			<div id="navigation" class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4">
+			<div id="navigation" ng-show="sidebar" class="w3-sidebar w3-bar-block w3-light-grey w3-border w3-card-4 w3-animate-left">
+				<div class="w3-xlarge w3-bar-item w3-button" ng-click="closeSidebar()">
+					&times;
+				</div>
 				<a href="#!home" class="w3-bar-item w3-button">Home</a>
 				<a href="#!maths" class="w3-bar-item w3-button">Maths</a>
 				<div class="w3-dropdown-hover">
@@ -26,7 +33,8 @@
 					</div>
 				</div>
 				<a href="#!contact" class="w3-bar-item w3-button">Contact</a>
-				<a href="./static/pages/victor.html" class="w3-bar-item w3-button">MMMMMMMMMM TASTES</a>
+				<a href="#!blog" class="w3-bar-item w3-button">Blog</a>
+
 				<!--Login--><div class="w3-container w3-cell"><span class="w3-circle w3-jumbo w3-button fa fa-user w3-{{signedIn?'green':'red'}}"ng-click="showModal('login')"></span></div>
 				<!--BlindMarkov--><div class="w3-container w3-cell"><span class="w3-bar-item w3-button fa fa-blind"onclick="document.write('');"></span><span class="w3-bar-item w3-button fa fa-link"ng-click="showModal('markov')"></span></div>
 				<!--Time--><div style="position:absolute; top:90%;"ng-bind="tTime"class="w3-panel"></div>
@@ -40,46 +48,29 @@
 					</u>
 				</div>
 			</div>
+			<div class="w3-xxxlarge w3-button" ng-click="openSidebar()">
+				&#9776;
+			</div>
 			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:10px;max-width:100%;"><ng-view></ng-view></div>
 			<!--Modal--><div id="modal" class="w3-modal" compile-html="modalContent"></div>
 		</div>
 		<script>
 			var app = angular.module("tApp", ["ngRoute"]);
-
-			app.config(function($routeProvider){
-				$routeProvider.when("/maths", {
-					templateUrl : "./static/pages/maths.html",
-					controller  : "cMaths"
-				}).when("/computing", {
-					templateUrl : "./static/pages/computing.html",
-					controller  : "cComputing"
-				}).when("/theory", {
-					templateUrl : "./static/pages/theory.html",
-					controller : "cTheory"
-				}).when("/alevel", {
-					templateUrl : "./static/pages/alevel.html",
-					controller  : "cALevel"
-				}).when("/projects", {
-					templateUrl : "./static/pages/projects.html",
-					controller : "cProjects"
-				}).when("/hobbies", {
-					templateUrl : "./static/pages/hobbies.html",
-					controller  : "cHobbies"
-				}).when("/twisty", {
-					templateUrl : "./static/pages/twisty.html",
-					controller : "cTwisty"
-				}).when("/contact", {
-					templateUrl : "./static/pages/contact.html",
-					controller  : "cContact"
-				}).when("/todo", {
-					templateUrl : "./static/pages/todo.html",
-					controller	: "cTodo"
-				}).otherwise({
-					templateUrl : "./static/pages/home.html",
-					controller  : "cHome"
-				});
-			});
 		</script>
-		<script src="./static/js/controller.js"></script>
+
+		
+		<script src="static/js/routing.js"></script>
+		<script src="static/js/controller/index.js"></script>
+		<script src="static/js/controller/alevel.js"></script>
+		<script src="static/js/controller/computing.js"></script>
+		<script src="static/js/controller/contact.js"></script>
+		<script src="static/js/controller/hobbies.js"></script>
+		<script src="static/js/controller/home.js"></script>
+		<script src="static/js/controller/math.js"></script>
+		<script src="static/js/controller/projects.js"></script>
+		<script src="static/js/controller/theory.js"></script>
+		<script src="static/js/controller/todo.js"></script>
+		<script src="static/js/controller/twisty.js"></script>
+		<script src="static/js/controller/blog.js"></script>
         </body>
 </html>
