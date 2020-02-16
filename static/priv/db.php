@@ -21,9 +21,9 @@
             }
         }
 
-        function query($query) {
+        function query($query, $data) {
             $stmt = $this->handle->prepare($query);
-            $stmt->execute();
+            $stmt->execute($data);
             return $stmt->fetchAll();
         }
 
@@ -32,4 +32,6 @@
             $stmt->execute();
         }
     }
+
+    $db = new DB("myDB");
 ?>

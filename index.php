@@ -51,7 +51,7 @@
 			<div class="w3-xxxlarge w3-button" ng-click="openSidebar()">
 				&#9776;
 			</div>
-			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:10px;max-width:100%;"><ng-view></ng-view></div>
+			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:{{contentMargin+10}}px;max-width:100%;"><ng-view></ng-view></div>
 			<!--Modal--><div id="modal" class="w3-modal" compile-html="modalContent"></div>
 		</div>
 		<script>
@@ -72,5 +72,6 @@
 		<script src="static/js/controller/todo.js"></script>
 		<script src="static/js/controller/twisty.js"></script>
 		<script src="static/js/controller/blog.js"></script>
+		<script src="static/js/controller/blog-dashboard.js"></script>
         </body>
 </html>

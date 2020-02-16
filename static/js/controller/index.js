@@ -38,10 +38,11 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	};
 	// Load Modals
 	$scope.modals = {};
-	$scope.loadModal("static/page/modal/login.html", "login");
-	$scope.loadModal("static/page/modal/markov.html", "markov");
-	$scope.loadModal("static/page/modal/random.html", "random");
-	$scope.loadModal("static/page/modal/bodge.html", "bodge");
+	$scope.loadModal("static/page/modal/login.php", "login");
+	$scope.loadModal("static/page/modal/markov.php", "markov");
+	$scope.loadModal("static/page/modal/random.php", "random");
+	$scope.loadModal("static/page/modal/bodge.php", "bodge");
+	$scope.loadModal("static/page/modal/blog-new.php", "blog-new");
 	//
 	
 	
