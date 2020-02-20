@@ -27,9 +27,9 @@
             return $stmt->fetchAll();
         }
 
-        function run($query) {
+        function run($query, $data) {
             $stmt = $this->handle->prepare($query);
-            $stmt->execute();
+            $stmt->execute($data);
         }
     }
 

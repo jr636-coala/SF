@@ -43,6 +43,8 @@ app.controller("tController", function($scope, $interval, $sce, $http){
 	$scope.loadModal("static/page/modal/random.php", "random");
 	$scope.loadModal("static/page/modal/bodge.php", "bodge");
 	$scope.loadModal("static/page/modal/blog-new.php", "blog-new");
+	$scope.loadModal("static/page/modal/blog-delete.php", "blog-delete");
+	$scope.loadModal("static/page/modal/blog-edit.php", "blog-edit");
 	//
 	
 	

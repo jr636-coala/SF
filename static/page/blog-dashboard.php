@@ -12,7 +12,10 @@
 
 <div class="w3-container">
     <div class="w3-jumbo">
-        Dashboard
+	Dashboard
+	<form id="form" method="post" action="{{formAction}}" style="display:none;">
+	<input name="postId" ng-value="postId" />
+	</form>
     </div>
 </div>
 
@@ -39,8 +42,9 @@
                 $id = $v['id'];
                 $title = $v['title'];
                 echo "<a class='w3-button' href='#!/blog/$id'>$title</a>";
-                echo "<a class='w3-button w3-right fa fa-trash' href='#!/blog/$id' title='Delete'></a>";
-                echo "<a class='w3-button w3-right fa fa-edit' href='#!/blog/$id' title='Edit'></a>";
+                echo "<a class='w3-button w3-right fa fa-trash' ng-click='doAction(\"delete\", $id)' title='Delete'></a>";
+                echo "<a class='w3-button w3-right fa fa-edit' ng-click='doAction(\"edit\", $id)' title='Edit'></a>";
+		echo "<br />";
             }
         }
     ?>

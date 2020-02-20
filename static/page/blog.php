@@ -27,7 +27,7 @@
     }
 
 
-    $x = $db->query("select * from Post order by creationDate desc", null);
+    $x = $db->query("select * from Post order by creationTime desc", null);
     $index = 0;
     if (isset($_SESSION['blognum'])) {
         foreach($x as $k=>$v) {
