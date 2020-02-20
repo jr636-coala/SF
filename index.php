@@ -8,6 +8,14 @@
 		<link href="https://fonts.googleapis.com/css?family=Roboto"rel="stylesheet"/>
 		<link rel="stylesheet"href="./static/css/style.css"/>
 		<link rel="shortcut icon" type="image/png" href="static/res/img/icon.jpg"/>
+		<!-- Main Quill library -->
+<script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ng-quill/4.5.3/ng-quill.min.js"></script>
+
+<!-- Theme included stylesheets -->
+<link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
 	</head>
 	<body>
 		<div ng-app="tApp" ng-controller="tController">
@@ -35,6 +43,7 @@
 				<a href="#!contact" class="w3-bar-item w3-button">Contact</a>
 				<a href="#!blog" class="w3-bar-item w3-button">Blog</a>
 
+
 				<!--Login--><div class="w3-container w3-cell"><span class="w3-circle w3-jumbo w3-button fa fa-user w3-{{signedIn?'green':'red'}}"ng-click="showModal('login')"></span></div>
 				<!--BlindMarkov--><div class="w3-container w3-cell"><span class="w3-bar-item w3-button fa fa-blind"onclick="document.write('');"></span><span class="w3-bar-item w3-button fa fa-link"ng-click="showModal('markov')"></span></div>
 				<!--Time--><div style="position:absolute; top:90%;"ng-bind="tTime"class="w3-panel"></div>
@@ -52,7 +61,7 @@
 				&#9776;
 			</div>
 			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:{{contentMargin+10}}px;max-width:100%;"><ng-view></ng-view></div>
-			<!--Modal--><div id="modal" class="w3-modal" compile-html="modalContent"></div>
+			<!--Modal--><div id="modal" class="w3-modal" onchange="function(){console.log(nicEditors.allTextAreas())}" compile-html="modalContent"></div>
 		</div>
 		<script>
 			var app = angular.module("tApp", ["ngRoute"]);
