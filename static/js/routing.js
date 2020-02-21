@@ -27,16 +27,16 @@ app.config(function($routeProvider){
         templateUrl : "static/page/todo.php",
         controller	: "cTodo"
     }).when("/blog/dash", {
-        templateUrl : "static/page/blog-dashboard.php",
+        templateUrl : "static/page/blog/blog-dashboard.php",
         controller : "cBlogDash"
     }).when("/blog/:num/:param", {
-        templateUrl : function(params){return "static/page/blog.php?num=" + params.num + "&param=" + params.param},
+        templateUrl : function(params){return "static/page/blog/blog.php?num=" + params.num + "&param=" + params.param},
         controller : "cBlog"
     }).when("/blog/:num/", {
-        templateUrl : function(params){return "static/page/blog.php?num=" + params.num},
+        templateUrl : function(params){return "static/page/blog/blog.php?num=" + params.num},
         controller : "cBlog"
     }).when("/blog", {
-        templateUrl : "static/page/blog.php",
+        templateUrl : "static/page/blog/blog.php",
         controller : "cBlog"
     }).otherwise({
         templateUrl : "static/page/home.php",

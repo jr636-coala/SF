@@ -57,10 +57,12 @@
 					</u>
 				</div>
 			</div>
-			<div class="w3-xxxlarge w3-button" ng-click="openSidebar()">
+			<div class="w3-xxxlarge w3-button" ng-click="openSidebar()" style="display: fixed;">
 				&#9776;
 			</div>
-			<!--Content--><div class="w3-content"style="margin-left:{{contentMargin+10}}px;margin-right:{{contentMargin+10}}px;max-width:100%;"><ng-view></ng-view></div>
+			<div class="w3-rest" style="position: absolute; top: 0px; left: 70px;">
+			<!--Content--><div class="w3-content" style="max-width: 70%; position: relative; margin-left:{{contentMargin+10}}px;margin-right:{{contentMargin+10}}px;"><ng-view></ng-view></div>
+			</div>
 			<!--Modal--><div id="modal" class="w3-modal" onchange="function(){console.log(nicEditors.allTextAreas())}" compile-html="modalContent"></div>
 		</div>
 		<script>
