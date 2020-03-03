@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include("../priv/db.php");
+    include("../../priv/db.php");
 
     if (isset($_GET['param'])) {
         if ($_GET['param'] == "logout") {
@@ -38,9 +38,9 @@
     }
 ?>
 
-<div class="w3-card">
+<div class="w3-card w3-panel" style="width:60vw;">
     <div class="w3-container">
-        <p class="w3-xxxlarge">
+        <p class="w3-xxxlarge" style="text-overflow: ellipsis; overflow: hidden;">
             <?php echo $x[$index]["title"] ?>
         </p>
 
@@ -58,8 +58,8 @@
     <div class="w3-panel">
         <?php echo $x[$index]["content"] ?>
     </div>
-
-    <div class="w3-sidebar w3-bar-block w3-card-4" style="right:0;top:0;height:60vh;">
+</div>
+<div class="w3-sidebar w3-bar-block w3-card-4" style="right:0;top:0;height:60vh;">
         <?php
         if (!isset($_SESSION['user'])) {
             echo "
@@ -92,4 +92,4 @@
             }
         ?>
    </div>
-</div>
+

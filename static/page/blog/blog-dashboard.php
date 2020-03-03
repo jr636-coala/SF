@@ -5,7 +5,7 @@
         die();
     }
 
-    include("../priv/db.php");
+    include("../../priv/db.php");
 
     $x = $db->query("select * from Post where userId=:id", array('id' => $_SESSION['user']['id']));
 ?>
