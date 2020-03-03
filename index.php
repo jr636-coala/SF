@@ -42,6 +42,7 @@
 				</div>
 				<a href="#!contact" class="w3-bar-item w3-button">Contact</a>
 				<a href="#!blog" class="w3-bar-item w3-button">Blog</a>
+				<a href="#!jos" class="w3-bar-item w3-button">JOS</a>
 
 
 				<!--Login--><div class="w3-container w3-cell"><span class="w3-circle w3-jumbo w3-button fa fa-user w3-{{signedIn?'green':'red'}}"ng-click="showModal('login')"></span></div>
@@ -82,5 +83,6 @@
 		<script src="static/js/controller/twisty.js"></script>
 		<script src="static/js/controller/blog.js"></script>
 		<script src="static/js/controller/blog-dashboard.js"></script>
+		<script src="static/js/controller/jos.js"></script>
         </body>
 </html>

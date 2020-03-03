@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>JOS Memory Map</h1>
+        <a href="" ng-click="goBack()">&lt; Go back</a>
+        <div>
+            <table>
+                <caption><h2>Low Memory</h2></caption>
+                <tr>
+                    <th>Address Range</th><th>Size</th><th>Description</th>
+                </tr>
+                <tr>
+                    <td>0x000 - 0x3FF</td><td>1 KiB</td><td></td>
+                </tr>
+                <tr>
+                    <td>0x400 - 0x4FF</td><td>256 bytes</td><td>BIOS Data Area (<a href="#!/jos/man/bda">BDA</a>)</td>
+                </tr>
+                <tr>
+                    <td>0x0500 - 0x7BFF</td><td>30 KiB</td><td>Freely usable RAM</td>
+                </tr>
+                <tr>
+                    <td>0x7C00 - 0x7DFF</td><td>512 bytes</td><td>Boot Sector</td>
+                </tr>
+                <tr>
+                    <td>0x07E00 - 0x7FFFF</td><td>480.5 KiB</td><td>Freely usable RAM</td>
+                </tr>
+                <tr>
+                    <td>0x80000 - 0x9FFFF</td><td>128 KiB</td><td></td>
+                </tr>
+                <tr>
+                    <td>0xA0000 - 0xFFFFF</td><td>384 KiB</td><td>ROM & Video Memory</td>
+                </tr>
+            </table>
+
+            <br />
+
+            
+
+            <br />
+        </div>
+    </body>
+</html>

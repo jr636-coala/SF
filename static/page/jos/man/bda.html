@@ -1,0 +1,50 @@
+<a href="" ng-click="goBack()">&lt; Go back</a>
+
+<table>
+    <caption><h2>BDA</h2></caption>
+    <tr>
+        <th>Address Range</th><th>Size</th><th>Description</th>
+    </tr>
+    <tr>
+        <td>0x400 - 0x407</td><td>8 bytes</td><td>IO ports for COM1-COM4 serial (each is 2 byte address)</td>
+    </tr>
+    <tr>
+        <td>0x408 - 0x40D</td><td>6 bytes</td><td>IO ports for LPT1-LPT3 parallel (each is 2 byte address)</td>
+    </tr>
+    <tr>
+        <td>0x40E - 0x40F</td><td>2 bytes</td><td>Extended BIOS Data Area (<a href="#!/jos/man/ebda">EBDA</a>) base address (mul by 16 to get actual address)</td>
+    </tr>
+    <tr>
+        <td>0x410 - 0x411</td><td>2 bytes</td><td>Packed bit flags for detected hardware</td>
+    </tr>
+    <tr>
+        <td>0x417 - 0x418</td><td>2 bytes</td><td>Keyboard state flags</td>
+    </tr>
+    <tr>
+        <td>0x41E - 0x43D</td><td>32 bytes</td><td>Keyboard buffer</td>
+    </tr>
+    <tr>
+        <td>0x449 - 0x449</td><td>1 byte</td><td>Display mode</td>
+    </tr>
+    <tr>
+        <td>0x44A - 0x44B</td><td>2 bytes</td><td>Number of TTY columns</td>
+    </tr>
+    <tr>
+        <td>0x463 - 0x464</td><td>2 bytes</td><td>Base IO port for video</td>
+    </tr>
+    <tr>
+        <td>0x46C - 0x46D</td><td>2 bytes</td><td>Number of IRQ0 timer ticks since boot</td>
+    </tr>
+    <tr>
+        <td>0x475 - 0x475</td><td>1 byte</td><td>Number of hard disk drives detected</td>
+    </tr>
+    <tr>
+        <td>0x480 - 0x481</td><td>2 bytes</td><td>Keyboard buffer start</td>
+    </tr>
+    <tr>
+        <td>0x482 - 0x483</td><td>2 bytes</td><td>Keyboard buffer end</td>
+    </tr>
+    <tr>
+        <td>0x497 - 0x497</td><td>1 byte</td><td>Last keyboard LED/Shift key state</td>
+    </tr>
+</table>

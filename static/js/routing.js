@@ -38,6 +38,15 @@ app.config(function($routeProvider){
     }).when("/blog", {
         templateUrl : "static/page/blog.php",
         controller : "cBlog"
+    }).when("/jos", {
+        templateUrl : "static/page/jos.php",
+        controller : "cJos"
+    }).when("/jos/man", {
+        templateUrl : "static/page/jos/man/index.html",
+        controller : "cJos"
+    }).when("/jos/man/:page", {
+        templateUrl : function(params){return "static/page/jos/man/" + params.page + ".html"},
+        controller : "cJos"
     }).otherwise({
         templateUrl : "static/page/home.php",
         controller  : "cHome"
