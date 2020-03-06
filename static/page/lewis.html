@@ -1,0 +1,22 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<div id="loadSvrGamesWidget"></div>
+
+<script>
+jQuery.ajax({
+    url: 'http://api.synthesisvr.com/javascripts/WordpressWidget.js',
+    dataType: "script",
+       success: function(){
+          window.svrLoadGames({
+             skipVariants: true,
+             groupByCategories: "*" ,
+             container: '#loadSvrGamesWidget',
+             rowSize: '100%',
+             uuid: '9b801767-02d5-54b7-9ffe-6a28741e442a',
+             gamesPerRow: 3
+          });
+       }
+});
+</script>
